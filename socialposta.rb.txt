@@ -1,0 +1,49 @@
+# Ruby program to post messages on various social media platforms simultaneously
+
+require 'rest-client'
+require 'json'
+
+# Method to post to social media platforms
+def post_to_social_media(platform, message)
+  case platform.downcase
+  when 'twitter'
+    post_to_twitter(message)
+  when 'facebook'
+    post_to_facebook(message)
+  when 'instagram'
+    post_to_instagram(message)
+  else
+    puts "Unsupported platform: #{platform}"
+  end
+end
+
+# Method to post message on Twitter
+def post_to_twitter(message)
+  # Implement Twitter posting logic using Twitter API
+  # Example:
+  # RestClient.post('https://api.twitter.com/1.1/statuses/update.json', { status: message }, { Authorization: 'Bearer YOUR_TWITTER_ACCESS_TOKEN' })
+  puts "Posted to Twitter: #{message}"
+end
+
+# Method to post message on Facebook
+def post_to_facebook(message)
+  # Implement Facebook posting logic using Facebook API
+  # Example:
+  # RestClient.post('https://graph.facebook.com/v12.0/me/feed', { message: message, access_token: 'YOUR_FACEBOOK_ACCESS_TOKEN' })
+  puts "Posted to Facebook: #{message}"
+end
+
+# Method to post message on Instagram
+def post_to_instagram(message)
+  # Implement Instagram posting logic using Instagram API
+  # Example:
+  # RestClient.post('https://graph.instagram.com/me/media', { caption: message, access_token: 'YOUR_INSTAGRAM_ACCESS_TOKEN' })
+  puts "Posted to Instagram: #{message}"
+end
+
+# Example usage
+post_message = "Hello world! This is a test post."
+
+post_to_social_media('twitter', post_message)
+post_to_social_media('facebook', post_message)
+post_to_social_media('instagram', post_message)
